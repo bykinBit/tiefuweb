@@ -1,0 +1,60 @@
+#page .ant-row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+#page .ant-row > div {
+    padding: 0 8px;
+}
+.anticon-close-circle {
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+    font-size: 12px;
+}
+.anticon-close-circle:hover {
+    color: #999;
+}
+.anticon-close-circle:active {
+    color: #666;
+}
+.inputName{
+    background:none;
+    border:none;
+    outline:none;
+}
+.ant-upload-select-picture-card i {
+    font-size: 28px;
+    color: #999;
+}
+
+.ant-upload-select-picture-card .ant-upload-text {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+}
+#page .avatar {
+    width: 150px;
+    height: 150px;
+}
+#page .avatar-uploader {
+    width: 150px;
+    height: 150px;
+    display: block;
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#page .avatar-uploader-trigger {
+    display: table-cell;
+    margin:0 auto;
+    vertical-align: middle;
+    font-size: 28px;
+    color: #999;
+}
+#page .avatar-uploader-trigger:before{
+    content:'\E627';
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+}

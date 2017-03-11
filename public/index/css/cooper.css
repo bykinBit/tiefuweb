@@ -1,0 +1,588 @@
+.coobox-jby {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background:#F2F2F2;
+}
+
+.coobox-jby .headerbox-jby {
+    width: 100%;
+    height: 600px;
+    background:url(/index/images/detail-1.png) no-repeat center center;
+
+}
+
+.coobox-jby .container-jby {
+    width: 1200px;
+    height: 540px;
+    margin: -30px auto 0;
+    background:#fff;
+    box-shadow:0 10px 20px #b6b6b6;
+}
+
+.coobox-jby .container-jby .topline-jby {
+    width: 100%;
+    height: 10px;
+    background:#e71f1f;
+}
+
+.coobox-jby .container-jby .containerin-jby {
+    width: 932px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 32px;
+}
+
+.coobox-jby .container-jby .containerin-jby .slips-jby {
+    width: 100%;
+    height: 16px;
+}
+
+.coobox-jby .container-jby .containerin-jby .slips-jby .slipsin-jby {
+     font-size: 14px;
+     line-height: 16px;
+     padding-left: 20px;
+     padding-right: 10px;
+     font-family: '苹方 常规';
+ }
+.coobox-jby .container-jby .containerin-jby .slips-jby .slipsin-jby:hover {
+    color:#e71f1f;
+}
+
+.coobox-jby .container-jby .containerin-jby .slips-jby .slipsins {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: '苹方 常规';
+}
+
+.container-jby .containerin-jby .slips-jby .slipsin-jby .sign-jby {
+    float: left;
+    font-size: 16px;
+    font-family: '微软雅黑';
+}
+
+/*面包屑结束*/
+/*联系我们 开始*/
+.container-jby .containerin-jby .contact-jby {
+    width: 100%;
+    height: auto;
+    padding-top: 130px;
+}
+
+.container-jby .containerin-jby .contact-jby .contacttop {
+    width: 100%;
+    height: 120px;
+}
+
+.container-jby .containerin-jby .contact-jby .contacttop .contactpic {
+    width: 330px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot {
+    width: 100%;
+    height: 170px;
+    padding-top: 67px;
+    text-align: justify;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet {
+    width: 228px;
+    height: 100%;
+    float: left;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdetm {
+    margin: auto 13.305%;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .signals-jby {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .bottom-jby {
+    width: 100%;
+    height: 109px;
+    padding-top: 20px;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .bottom-jby .bottomintop-jby {
+    width: 132px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .bottom-jby .bottomintop-jby .address {
+    display: block;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .bottom-jby .bottomintop-jby .line {
+    display: block;
+    font-style: normal;
+    width: 100%;
+    margin-top: -6px;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .bottom-jby .bottomintop-jby .line img {
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .bottom-jby .bottomintop-jby .worden {
+    display: block;
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    font-size: 12px;
+    font-family: "微软雅黑", Arial, "黑体";
+    color: #666;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .bottom-jby .bottominbot-jby {
+    width: 100%;
+    height: 40px;
+    padding-top: 20px;
+}
+
+.container-jby .containerin-jby .contact-jby .contactbot .contactdet .bottom-jby .bottominbot-jby .word {
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+.storebox-jby {
+    width: 1200px;
+    height: 504px;
+    margin: 0 auto;
+    background:#fff;
+    box-shadow: 0 20px 20px #b6b6b6;
+}
+
+.storebox-jby .storein-jby {
+    width: 932px;
+    height: 406px;
+    padding-top: 90px;
+    margin: 0 auto;
+}
+
+.storebox-jby .storein-jby .storeintop {
+    width: 330px;
+    height: 116px;
+    margin: 0 auto;
+}
+
+.storebox-jby .storein-jby .storeinbot {
+    width: 1200px;
+    height: 212px;
+    margin-top: 80px;
+    margin-left: -134px;
+    position: relative;
+    background: url("/index/images/location-jby.png") no-repeat center center;
+}
+
+.storebox-jby .storein-jby .storeinbot .storeaddre {
+    width: 366px;
+    height: 100px;
+    position: absolute;
+    top: 66px;
+    right: 210px;
+}
+
+.storebox-jby .storein-jby .storeinbot .storeaddre .storeaddretop {
+    width: 100%;
+    height: 40%;
+    border-bottom: 1px solid #b5b5b5;
+}
+
+.storebox-jby .storein-jby .storeinbot .storeaddre .storeaddretop .word {
+    font-family: '苹方 粗体';
+    line-height: 40px;
+    font-size: 18px;
+    color: #eee;
+}
+
+.storebox-jby .storein-jby .storeinbot .storeaddre .storeaddretop .word span {
+    font-family: 'times';
+    line-height: 40px;
+    font-size: 14px;
+    padding-left: 10px;
+    color: #999;
+}
+
+.storebox-jby .storein-jby .storeinbot .storeaddre .storeaddrebot {
+    height: 60%;
+}
+
+.storebox-jby .storein-jby .storeinbot .storeaddre .storeaddrebot .addressdetail {
+    font-family: '苹方 粗体';
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.storebox-jby .storein-jby .storeinbot .storeaddre .storeaddrebot .addressph {
+    font-family: 'timesbd';
+    font-size: 12px;
+    color: #fff;
+}
+
+.storebox-jby .storein-jby .storeinbot .storecity {
+    width: 114px;
+    height: 50px;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background:#c31010;
+}
+
+.storebox-jby .storein-jby .storeinbot .storecity .storecityin {
+    width: 150px;
+    height: 34px;
+    margin-top: 8px;
+    margin-left: -18px;
+    text-align: center;
+    line-height: 34px;
+    position: relative;
+    background:#e71f1f;
+}
+
+.storebox-jby .storein-jby .storeinbot .storecity .storecityin .storedotleft {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto 0;
+    border-radius: 50%;
+    background:#fff;
+}
+
+.storebox-jby .storein-jby .storeinbot .storecity .storecityin .storename {
+    text-align: center;
+    line-height: 34px;
+    font-size: 12px;
+    font-family: "苹方 粗体";
+    color: #fff;
+}
+
+.storebox-jby .storein-jby .storeinbot .storecity .storecityin .storedotright {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto 0;
+    border-radius: 50%;
+    background: #fff;
+}
+
+/*留言开始*/
+.intention-jby {
+    width: 1200px;
+    height: 920px;
+    margin: 0 auto;
+    background:#fff;
+    box-shadow: 0 -10px 20px #b6b6b6;
+}
+
+.intention-jby .intentionin-jby {
+    width: 932px;
+    height: 664px;
+    padding-top: 140px;
+    margin: 0 auto;
+}
+
+.intention-jby .intentionin-jby .intentop {
+    width: 330px;
+    height: 117px;
+    margin: 0 auto;
+}
+
+.intention-jby .intentionin-jby .intenbot {
+    width: 100%;
+    height: 456px;
+    padding-top: 90px;
+}
+
+.intention-jby .intentionin-jby .intenbot .interface1 {
+    width: 880px;
+    height: 34px;
+    margin-left: 20px;
+}
+
+.intention-jby .intentionin-jby .intenbot .interface1 .name {
+    width: 274px;
+    height: 100%;
+    float: left;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.intention-jby .intentionin-jby .intenbot .interface1 .name .icon {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url(/index/images/name-jby.png) no-repeat center center;
+}
+.intention-jby .intentionin-jby .intenbot .interface1 .name input {
+    max-width: 100%;
+    height: 30px;
+    float: left;
+    border: none;
+    margin-left:10px;
+    color:#999;
+    font-size:16px;
+    outline: none;
+    background:none;
+}
+
+.intention-jby .intentionin-jby .intenbot .interface1 .address {
+    width: 274px;
+    height: 100%;
+    float: left;
+    margin: 0 29px;
+    border-bottom: 1px solid #2f2f2f;
+}
+.intention-jby .intentionin-jby .intenbot .interface1 .address input {
+    max-width: 100%;
+    height: 30px;
+    float: left;
+    border: none;
+    margin-left:10px;
+    color:#999;
+    font-size:16px;
+    outline: none;
+    background:none;
+}
+
+.intention-jby .intentionin-jby .intenbot .interface1 .address .icon {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url("/index/images/address-jbys.png") no-repeat center center;
+}
+
+.intention-jby .intentionin-jby .intenbot .interface1 .want {
+    width: 274px;
+    height: 100%;
+    float: left;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.intention-jby .intentionin-jby .intenbot .interface1 .want .icon {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url("/index/images/want-jby.png") no-repeat center center;
+}
+.intention-jby .intentionin-jby .intenbot .interface1 .want input {
+    max-width: 100%;
+    height: 30px;
+    float: left;
+    border: none;
+    margin-left:10px;
+    color:#999;
+    font-size:16px;
+    outline: none;
+    background:none;
+}
+
+.intention-jby .intentionin-jby .intenbot .interface2 {
+    width: 880px;
+    height: 34px;
+    margin-left: 20px;
+    padding-top: 30px;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .view {
+    width: 274px;
+    height: 100%;
+    float: left;
+    border-bottom: 1px solid #2f2f2f;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .view .icon {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url(/index/images/view-jby.png) no-repeat center center;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .view input {
+    max-width: 100%;
+    height: 30px;
+    float: left;
+    border: none;
+    margin-left:10px;
+    color:#999;
+    font-size:16px;
+    outline: none;
+    background:none;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .need {
+    width: 274px;
+    height: 100%;
+    float: left;
+    margin: 0 29px;
+    border-bottom: 1px solid #2f2f2f;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .need .icon {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url("/index/images/need-jby.png") no-repeat center center;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .need input {
+    max-width: 100%;
+    height: 30px;
+    float: left;
+    border: none;
+    margin-left:10px;
+    color:#999;
+    font-size:16px;
+    outline: none;
+    background:none;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .charge {
+    width: 274px;
+    height: 100%;
+    float: left;
+    border-bottom: 1px solid #2f2f2f;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .charge .icon {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url("/index/images/charge-jby.png") no-repeat center center;
+}
+.intention-jby .intentionin-jby .intenbot .interface2 .charge input {
+    max-width: 100%;
+    height: 30px;
+    float: left;
+    border: none;
+    margin-left:10px;
+    color:#999;
+    font-size:16px;
+    outline: none;
+    background:none;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 {
+    width: 880px;
+    height: 302px;
+    margin-left: 20px;
+    padding-top: 56px;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .content{
+    width:100%;
+    height:224px;
+    border:1px solid #2f2f2f;
+    box-sizing: border-box;
+    position:relative;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .content .title{
+   width:100%;
+    height:50px;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .content textarea{
+    width:875px;
+    height:174px;
+    background:none;
+    outline: none;
+    resize:none;
+    border:none;
+    color:#999;
+    font-size: 16px;
+    font-family:"苹方 常规";
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .content .der{
+    width:78px;
+    height:78px;
+    border-radius:50%;
+    position:absolute;
+    top:-50px;
+    left:-50px;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom{
+    width:100%;
+    height:80px;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .topbox{
+     width:200px;
+     height:40px;
+     line-height: 40px;
+     color:#999;
+     font-size: 16px;
+ }
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .topbox span{
+    color:#101010;
+    font-size: 16px;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .botbox{
+    width:50%;
+    height:29px;
+    margin-top:10px;
+    float:left;
+    line-height: 30px;
+    border-bottom:1px solid #2f2f2f;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .botbox .lefticon{
+    width:20px;
+    height:20px;
+    float:left;
+    margin-left:7px;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .botbox .rightphone{
+    width:234px;
+    height:100%;
+    float:left;
+    margin-left:7px;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .botbox .rightphone input{
+    width:100%;
+    height:100%;
+    background:none;
+    outline:none;
+    color:#999;
+    font-size:16px;
+    border:none;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .sendbox {
+    width: 160px;
+    height: 40px;
+    float: right;
+    background: #e71f1f;
+    border-radius:10px;
+    line-height: 40px;
+    transition:all .8s ease;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .sendbox :hover{
+    opacity:0.8;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .sendbox .sendboxin{
+    width: 130px;
+    height: 40px;
+    margin:0 auto;
+    cursor:pointer;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .sendbox .sendboxin .lefticon{
+    width: 30px;
+    height: 30px;
+    margin-top:5px;
+    float:left;
+    background: url("/index/images/send-jby.png") no-repeat center center;
+}
+.intention-jby .intentionin-jby .intenbot .interface3 .bottom .sendbox .sendboxin .rightword{
+    width: 100px;
+    height: 100%;
+    float:left;
+    font-size: 18px;
+    color:#eee;
+    text-align:center;
+}

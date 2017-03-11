@@ -1,0 +1,403 @@
+.banner_zxd{
+    width:100%;
+    height:600px;
+    background:url(/index/images/banner3.png) no-repeat center center;
+    background-size:cover;
+}
+.hezi_zxd{
+    width:100%;
+    height:auto;
+
+}
+.centerbox_zxd{
+    width:1200px;
+    margin:-30px auto 0;
+}
+.xiantiao_zxd{
+    width:100%;
+    height:9px;
+    background:#ff3333;
+}
+
+.crumbs{
+    width:100%;
+    height:69px;
+    background:#ffffff;
+    font-style:normal;
+    font-size:14px;
+    font-family:"苹方";
+    color:#000000;
+
+}
+.crumbs i{
+    float:left;
+    margin-left:52px;
+    margin-top:50px;
+    font-style:normal;
+}
+.crumbs span{
+    float:left;
+    margin-top:50px;
+    margin-left:10px;
+}
+.crumbs p{
+    float:left;
+    margin-top:50px;
+    margin-left:7px;
+}
+.crumbs em{
+    float:left;
+    margin-top:50px;
+    margin-left:7px;
+    font-style:normal;
+}
+.crumbs .fenyename_zxd{
+    color:#000000;
+    font-weight:bold;
+}
+
+
+.posi_zxd{
+    width:960px;
+    height:auto;
+    margin:74px auto 109px;
+
+}
+.posi_zxd b{
+    display:block;
+    width:100%;
+    font-size:25px;
+    color:#000000;
+    text-align:center;
+    font-weight:normal;
+}
+.posi_zxd i{
+    display:block;
+    width:100%;
+    text-align:right;
+    font-size:14px;
+    color:#000000;
+    font-style:normal;
+    padding-top:28px;
+}
+.posi_zxd .diyi_zxd{
+    width:100%;
+    height:auto;
+    padding-top:29px;
+    font-size:14px;
+    color:#787878;
+}
+.diyi_zxd .dis_zxd{
+    padding-top:38px;
+}
+.dier_zxd .dis_zxd{
+    padding-top:38px;
+}
+.posi_zxd .pic1_zxd{
+    width:100%;
+    height:287px;
+    padding-top:48px;
+    text-align:center;
+}
+
+.posi_zxd .dier_zxd{
+    width:100%;
+    height:auto;
+    padding-top:52px;
+    font-size:14px;
+    color:#787878;
+}
+
+.xuanze_zxd{
+    width:960px;
+    height:53px;
+    border-top:1px solid #b9b9b9;
+    border-bottom:1px solid #b9b9b9;
+    line-height:53px;
+    margin:0 auto 208px;
+
+}
+.shang_zxd{
+    float:left;
+    color:#787878;
+    cursor: pointer;
+}
+.shang_zxd p{
+     float:left;
+    font-size:17px;
+ }
+.shang_zxd span{
+    float:left;
+    font-size:17px;
+}
+.shang_zxd i{
+    float:left;
+    margin-right:8px;
+    margin-left:8px;
+    font-style:normal;
+}
+.xia_zxd{
+    float:right;
+    color:#787878;
+    cursor: pointer;
+}
+.xia_zxd p{
+    float:left;
+    font-size:17px;
+}
+.xia_zxd span{
+    float:left;
+    font-size:17px;
+}
+.xia_zxd i{
+    float:left;
+    margin-right:8px;
+    margin-left:8px;
+    font-style:normal;
+}
+add_zxd{
+    display:block;
+}
+
+
+/*页脚*/
+
+.bin_footerbox {
+    height: auto;
+    width: 100%;
+    background: #262626;
+    margin-top: 80px;
+}
+
+.bin_footer {
+    height: auto;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 50px 0;
+}
+
+.bin_back {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: url(/index/images/bin_back_w.png);
+    cursor: pointer;
+    position: absolute;
+    top: -52px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    transition:all .4s ease;
+}
+
+.bin_back:hover {
+    background: url(/index/images/bin_back_r.png);
+    transition:all .4s ease;
+}
+.bin_footerbottom{
+    width:100%;
+    height:70px;
+    background:#191919;
+    margin:0 auto;
+    color:#7d7d7d;
+    text-align: center;
+    font-size: 14px;
+    line-height: 70px;
+}
+.bin_contact{
+    width:100%;
+    height:200px;
+}
+.bin_conleft{
+    width:450px;
+    height:100%;
+    position: relative;
+    float: left;
+}
+.bin_contitlebox{
+    width:100%;
+    height:26px;
+    margin-top:8px;
+    float: left;
+}
+.bin_contitle{
+    width:106px;
+    height:26px;
+    margin:0 0 0 6px;
+    font-size: 20px;
+    color:#fff;
+    line-height: 26px;
+    font-family: "宋体";
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+.bin_contitle img{
+    position: absolute;
+    right:-20px;
+}
+.bin_name{
+    width:210px;
+    height:28px;
+    color:#7d7d7d;
+    margin:24px 0 0 6px;
+    line-height: 28px;
+    font-family: "times";
+    border-bottom:1px solid #7d7d7d;
+    float: left;
+}
+.bin_conimg{
+    margin-left:4px;
+}
+.bin_input{
+    width:130px;
+    height:14px;
+    display: inline-block;
+    margin-left:8px;
+    background: none;
+    border:none;
+    outline:none;
+    color:#d7d7d7;
+    font-family: "宋体";
+}
+.bin_phone{
+    margin-left:16px;
+}
+.bin_message{
+    width:436px;
+    height:40px;
+    margin:20px 0 0 6px;
+    color:#d74c46;
+    font-family: "times";
+    border-bottom: 1px solid #d74c46;
+    float: left;
+}
+.bin_message img{
+    width:12px;
+    height:12px;
+}
+.bin_input2{
+    width:100%;
+    height:14px;
+    margin-top:2px;
+    display: inline-block;
+    background: none;
+    border:none;
+    outline:none;
+    font-family: "宋体";
+    color:#d7d7d7;
+}
+.bin_send{
+    width:94px;
+    height:26px;
+    border:2px solid #7d7d7d;
+    position: absolute;
+    right:10px;
+    text-align: center;
+    line-height: 26px;
+    bottom: 0;
+    color:#7d7d7d;
+    font-family: 'times';
+    cursor:pointer;
+}
+.bin_send:hover{
+    background: #d74c46;
+    color:#fff;
+}
+.bin_mapbox{
+    width:712px;
+    height:140px;
+    border:1px solid #7d7d7d;
+    float: right;
+    background: url(/index/images/bin_map.png);
+    position: relative;
+    margin-bottom: 16px;
+}
+.bin_mapcon{
+    width:auto;
+    height:50px;
+    color:#fff;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:100px;
+    margin:auto;
+}
+/*.bin_cnmap{*/
+/*font-family: "宋体";*/
+/*}*/
+.bin_enmap{
+    font-family: "times";
+    margin-top:8px;
+    color:#bebebe;
+}
+.bin_conemail{
+    width:260px;
+    height:42px;
+    float: right;
+    padding-left: 68px;
+    color:#fff;
+    position: relative;
+    font-family: "times";
+}
+.bin_conemail img{
+    position: absolute;
+    left:0;
+}
+.bin_conemail p{
+    font-size: 12px;
+    margin:4px 0;
+}
+.bin_conemail span{
+    font-size: 14px;
+}
+
+/*导航*/
+.bin_topbox{
+    width:100%;
+    height:80px;
+}
+.bin_top{
+    width:1200px;
+    height:80px;
+    margin:0 auto;
+}
+.bin_btnbox{
+    float: right;
+    width:auto;
+    height:100%;
+    position: relative;
+}
+.bin_btn{
+    height:80px;
+    width:84px;
+    margin-left:100px;
+    float: right;
+    text-align: center;
+    font-size: 20px;
+    line-height: 80px;
+    position: relative;
+    cursor: pointer;
+    color:#fff;
+    font-family: "fangke";
+}
+.bin_btnline{
+    height:80px;
+    width:84px;
+    position: absolute;
+    top:0;
+}
+.bin_line{
+    width:84px;
+    height:12px;
+    position: absolute;
+    bottom: 12px;
+    left:2px;
+    transition: all .4s ease;
+    background: url(/index/images/bin_tline.png);
+}
+.bin_line2{
+    width:0;
+}
+
+

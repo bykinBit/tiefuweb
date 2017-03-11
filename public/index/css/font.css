@@ -1,0 +1,48 @@
+@font-face {
+    font-family:'times';
+    src:url(/index/font/times.ttf);
+}
+@font-face {
+    font-family: 'timesbd';
+    src:url(/index/font/timesbd.ttf);
+}
+@font-face {
+    font-family: 'timesbi';
+    src:url(/index/font/timesi.ttf);
+}
+@font-face {
+    font-family: 'fangke';
+    src:url(/index/font/方正清刻本悦宋简体.TTF);
+}
+@font-face {
+    font-family:'rightarrow';
+    src:url(/index/font/iconfont.ttf);
+}
+@font-face {
+    font-family:'dayu';
+    src:url(/index/font/iconfont.ttf);
+}
+@font-face {
+    font-family:'addr';
+    src:url(/index/font/iconfont.ttf);
+}
+@font-face {
+    font-family:'Email';
+    src:url(/index/font/iconfont.ttf);
+}
+@font-face {
+    font-family:'phone';
+    src:url(/index/font/iconfont.ttf);
+}
+@font-face {
+    font-family: 'sanfran';
+    src:url(/index/font/SANFRANCISCODISPLAY-LIGHT-WEBFONT.TTF);
+}
+@font-face {
+    font-family: 'pingfang';
+    src:url(/index/font/PingFang_0.TTF);
+}
+@font-face {
+    font-family: 'heln';
+    src:url(/index/font/HELN.TTF);
+}

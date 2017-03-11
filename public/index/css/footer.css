@@ -1,0 +1,189 @@
+.bin_footerbox {
+    height: auto;
+    width: 100%;
+    background: #262626;
+}
+
+.bin_footer {
+    height: auto;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 50px 0;
+}
+
+.bin_back {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: url(/index/images/bin_back_w.png);
+    cursor: pointer;
+    position: absolute;
+    top: -52px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    transition:all .4s ease;
+}
+
+.bin_back:hover {
+    background: url(/index/images/bin_back_r.png);
+    transition:all .4s ease;
+}
+.bin_footerbottom{
+    width:100%;
+    height:70px;
+    background:#191919;
+    margin:0 auto;
+    color:#7d7d7d;
+    text-align: center;
+    font-size: 14px;
+    line-height: 70px;
+}
+.bin_contact{
+    width:100%;
+    height:200px;
+}
+.bin_conleft{
+    width:450px;
+    height:100%;
+    position: relative;
+    float: left;
+}
+.bin_contitlebox{
+    width:100%;
+    height:26px;
+    margin-top:8px;
+    float: left;
+}
+.bin_contitle{
+    width:106px;
+    height:26px;
+    margin:0 0 0 6px;
+    font-size: 20px;
+    color:#fff;
+    line-height: 26px;
+    font-family: "宋体";
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+.bin_contitle img{
+    position: absolute;
+    right:-20px;
+}
+.bin_name{
+    width:210px;
+    height:28px;
+    color:#7d7d7d;
+    margin:24px 0 0 6px;
+    line-height: 28px;
+    font-family: "times";
+    border-bottom:1px solid #7d7d7d;
+    float: left;
+}
+.bin_conimg{
+    margin-left:4px;
+}
+.bin_input{
+    width:130px;
+    height:14px;
+    display: inline-block;
+    margin-left:8px;
+    background: none;
+    border:none;
+    outline:none;
+    color:#d7d7d7;
+    font-family: "宋体";
+}
+.bin_phone{
+    margin-left:16px;
+}
+.bin_message{
+    width:436px;
+    height:40px;
+    margin:20px 0 0 6px;
+    color:#d74c46;
+    font-family: "times";
+    border-bottom: 1px solid #d74c46;
+    float: left;
+}
+.bin_message img{
+    width:12px;
+    height:12px;
+}
+.bin_input2{
+    width:100%;
+    height:14px;
+    margin-top:2px;
+    display: inline-block;
+    background: none;
+    border:none;
+    outline:none;
+    font-size:12px;
+    font-family: "pingfang";
+    color:#d7d7d7;
+}
+.bin_send{
+    width:94px;
+    height:26px;
+    border:2px solid #7d7d7d;
+    position: absolute;
+    right:10px;
+    text-align: center;
+    line-height: 26px;
+    bottom: 0;
+    color:#7d7d7d;
+    font-family: 'times';
+    cursor:pointer;
+}
+.bin_send:hover{
+    background: #d74c46;
+    color:#fff;
+}
+.bin_mapbox{
+    width:712px;
+    height:140px;
+    border:1px solid #7d7d7d;
+    float: right;
+    background: url(/index/images/bin_map.png);
+    position: relative;
+    margin-bottom: 16px;
+}
+.bin_mapcon{
+    width:auto;
+    height:50px;
+    color:#fff;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:100px;
+    margin:auto;
+}
+/*.bin_cnmap{*/
+    /*font-family: "宋体";*/
+/*}*/
+.bin_enmap{
+    font-family: "times";
+    margin-top:8px;
+    color:#bebebe;
+}
+.bin_conemail{
+    width:260px;
+    height:42px;
+    float: right;
+    padding-left: 68px;
+    color:#fff;
+    position: relative;
+    font-family: "times";
+}
+.bin_conemail img{
+    position: absolute;
+    left:0;
+}
+.bin_conemail p{
+    font-size: 12px;
+    margin:4px 0;
+}
+.bin_conemail span{
+    font-size: 14px;
+}
