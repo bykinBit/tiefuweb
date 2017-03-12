@@ -85,6 +85,16 @@ class Intention extends React.Component {
                 charge: '1000-80000',
                 num: '152345648456',
                 content:'awjdljalwjdilawjdlajwil122222222222222jdlajiddjwlid'
+            },{
+                key: '2',
+                name: 'John Brown',
+                city: '太原',
+                intent: '大',
+                view: '美',
+                type: '礼品铁壶',
+                charge: '1000-80000',
+                num: '152345648456',
+                content:'awjdljalwjdilawjdlajwil122222222222222jdlajiddjwlid'
             }]
         };
 
@@ -108,27 +118,7 @@ class Intention extends React.Component {
     }
 }
 
-// const dataSource= [{
-//     key: '0',
-//     name: 'John Brown',
-//     city: '太原',
-//     intent: '大',
-//     view: '美',
-//     type: '礼品铁壶',
-//     charge: '1000-80000',
-//     num: '152345648456',
-//     content:'字字字字字sdfsdfs字字字字字'
-// },{
-//     key: '1',
-//     name: 'John Brown',
-//     city: '太原',
-//     intent: '大',
-//     view: '美',
-//     type: '礼品铁壶',
-//     charge: '1000-80000',
-//     num: '152345648456',
-//     content:'awjdljalwjdilawjdlajwil122222222222222jdlajiddjwlid'
-// }]
+
 
 
 class Frame extends React.Component {
