@@ -4,12 +4,13 @@
 npm install webpack -g
 如果已经安装，就不需要再安装
 ````
-```nashorn js
+```
 2.安装依赖项
 npm install
  运行此命令就会安装所有依赖项，保证文件正常运行
+ npm install compression
 ```
-```nashorn js
+```
 3.启动项目
 运行 npm run start
 运行 npm run watch 
