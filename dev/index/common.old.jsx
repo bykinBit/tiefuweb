@@ -1,13 +1,11 @@
 const React = require('react');
-import { BackTop } from 'antd';
+
 class Footer extends React.Component {
     render() {
         return (
             <div className="bin_footerbox">
                 <div className="bin_footer">
-                    <div>
-                        <BackTop className="bin_back"/>
-                    </div>
+                    <div className="bin_back"></div>
                     <div className="bin_contact">
                         <div className="bin_conleft">
                             <div className="bin_contitlebox">
@@ -93,7 +91,8 @@ class Nav extends React.Component {
         const title = datas.map((v, i) =>
             <a className="bin_btn" key={i} href={`${v.href}`}>
                     {v.title}
-                <Btn key={i} isActive={i === this.state.index} index={i} click={this.click}/>
+                <Btn key={i} isActive={i === this.state.index} index={i} click={this.click}>
+                </Btn>
             </a>
         );
         return (
