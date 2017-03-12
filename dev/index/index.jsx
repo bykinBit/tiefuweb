@@ -6,7 +6,7 @@ const common=require('./common.jsx');
 class Img extends React.Component{
     render(){
         return(
-            <div className="slides"  style={{left:this.props.left}}>
+            <div className={`${this.props.isActive? 'slides toum1':'slides toum'}`} >
                 <img src={`${this.props.img}`} alt=""/>
             </div>
         )
@@ -32,7 +32,7 @@ class Banner extends React.Component {
         this.click =this.click.bind(this);
     }
     componentDidMount(){
-        setInterval(()=>{
+        this.timeid=setInterval(()=>{
             var v=this.state.index+1;
             if(v>2){
                 this.setState({
@@ -43,18 +43,19 @@ class Banner extends React.Component {
                     index: v
                 })
             }
-        },2000)
+        },3000)
     }
 
 
     prev(){
         const len=this.props.banner.length;
-
+        clearInterval(this.timeid);
         this.setState((ps)=>
             ({index:(ps.index-1<0)?(len-1):(ps.index-1)}))
     }
     next(){
         const len=this.props.banner.length;
+        clearInterval(this.timeid);
         this.setState((ps)=>
             ({index:(ps.index+1>=len)?0:(ps.index+1)}))
     }
@@ -63,7 +64,7 @@ class Banner extends React.Component {
     }
     render() {
         var Items= this.props.banner.map((v,i)=>
-            <Img key={i} isActive={i===this.state.index} left={1920*(i)} img={v.img} />
+            <Img key={i} isActive={i===this.state.index} img={v.img} />
         );
         var Btns = this.props.banner.map((v,i)=>
             <Btn key={i} isActive={i===this.state.index} index={i} click={this.click}/>
@@ -74,7 +75,7 @@ class Banner extends React.Component {
                 <div className="bannerbox">
                     <common.Nav data={nav}/>
 
-                    <div className="imgbox"  style={{transform:`translate3d(${-1920*this.state.index}px,0,0)`}}>
+                    <div className="imgbox"  style={{opacity:1}}>
 
                         {Items}
                     </div>
@@ -237,28 +238,28 @@ class Trust extends React.Component{
 class New_zxd extends React.Component {
     render() {
         const neirong = this.props.data.map((v, i) =>
-        <a href={`${v.href}`}>
-            <div className={ `${(i>0)?'showtop_zxd show_zxd':'show_zxd'}`} key={i}>
-                <div className={ `${(i===1)?'left_zxd rightfont_zxd':'left_zxd'}`}>
-                    <div className="title_zxd">{v.title}</div>
-                    <div className="browse_zxd">
-                        <p>{v.date}</p>
-                        <img className="date_zxd" src={v.pic2} alt=""/>
-                        <span>{v.number}</span>
-                        <img className="number_zxd" src={v.pic3} alt=""/>
+            <a href={`${v.href}`}>
+                <div className={ `${(i>0)?'showtop_zxd show_zxd':'show_zxd'}`} key={i}>
+                    <div className={ `${(i===1)?'left_zxd rightfont_zxd':'left_zxd'}`}>
+                        <div className="title_zxd">{v.title}</div>
+                        <div className="browse_zxd">
+                            <p>{v.date}</p>
+                            <img className="date_zxd" src={v.pic2} alt=""/>
+                            <span>{v.number}</span>
+                            <img className="number_zxd" src={v.pic3} alt=""/>
+                        </div>
+                        <div className="explain_zxd">
+                            <p>{v.content1}</p>
+                            <span>{v.content2}</span>
+                            <span className={ `${(i===1)?'zuo_zxd':''}`}>{v.content3}</span>
+                        </div>
                     </div>
-                    <div className="explain_zxd">
-                        <p>{v.content1}</p>
-                        <span>{v.content2}</span>
-                        <span className={ `${(i===1)?'zuo_zxd':''}`}>{v.content3}</span>
+                    <div className= { `${(i===1)?'right_zxd leftimg_zxd':'right_zxd'}`}>
+                        <div className="whiteline_zxd"></div>
+                        <img src={v.pic1} alt=""/>
                     </div>
                 </div>
-                <div className= { `${(i===1)?'right_zxd leftimg_zxd':'right_zxd'}`}>
-                    <div className="whiteline_zxd"></div>
-                    <img src={v.pic1} alt=""/>
-                </div>
-            </div>
-        </a>
+            </a>
         )
         return (
             <div className="box_zxd">
@@ -292,7 +293,7 @@ class Index extends React.Component{
                 <New_zxd data={data}/>
                 <common.Footer/>
             </div>
-            )
+        )
 
     }
 }
