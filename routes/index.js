@@ -39,4 +39,11 @@ router.get('/product/:cat_id/:p_id',(req,res)=>{
 
     res.sendFile(path.resolve('./views/index/detail.html'));//根据req.param.cat_id,//利用where条件检索
 });
+
+router.get('/product/:cat_id/:p_id/all',(req,res)=>{
+    mysql.query('select * from designer',[], (err, data)=> {
+        res.json(data);
+    })
+});
+
 module.exports=router;

@@ -37,6 +37,7 @@ router.get('/news/list',(req,res)=>{
 router.get('/designer/list',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/designer.html'));
 });
+
 router.get('/about_us',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/about_us.html'));
 });
@@ -62,4 +63,32 @@ router.get('/about_us/delete/:id',(req,res)=>{
         res.redirect('/admin/about_us');
     });
 });
+
+// 设计师
+router.get('/designer/all', (req, res)=> {
+    mysql.query('select * from designer', (err, data)=> {
+        res.json(data);
+    })
+});
+router.post('/designer/add', (req, res)=> {
+    mysql.query("INSERT INTO `designer` (`id`, `name`, `describe`, `img`) VALUES (NULL, '', '', '')",[],(err,result)=>{
+        res.json(result);
+    })
+});
+router.post('/designer/update', (req,res)=> {
+    mysql.query("UPDATE designer SET `name` = ?, `describe` = ? WHERE `id` = ?",[req.body.name,req.body.describe,req.body.id], (err, data)=> {
+        res.json(data);
+    })
+});
+router.get('/designer/list/delete/:id', (req, res)=> {
+    mysql.query('delete from designer where id = ?',
+        [req.params.id], function (err, data) {
+            if (!err) {
+                res.redirect('/admin/designer/list');
+            }
+        })
+});
+
+
+
 module.exports=router;
