@@ -33,6 +33,27 @@ class Rabitt extends React.Component {
 }
 // 产品设计师
 class Designer extends React.Component {
+    // constructor(props){
+    //     super(props)
+    //     this.state = {
+    //         dataSource: [{
+    //             key: '',
+    //             name: '',
+    //             img: '',
+    //             describe: '',
+    //         }],
+    //     };
+    // }
+    // componentDidMount() {
+    //     fetch('/product/:cat_id/:p_id/all', {
+    //         credentials: 'same-origin'
+    //     }).then((res)=>res.json()).then((data)=> {
+    //         console.log(data)
+    //         this.setState({
+    //             dataSource: data
+    //         });
+    //     });
+    // }
     render() {
         return (
             <div className="desbox">
@@ -134,7 +155,6 @@ class Stepthree extends React.Component {
 
 class Detail extends React.Component {
     render() {
-
         var Breads = this.props.data.map((v, i) =>
             (<Bread key={i} line={v.line}/>)
         );
@@ -142,15 +162,15 @@ class Detail extends React.Component {
             (<Rabitt key={i} content={v.content}/>)
         )
         var Designers = this.props.content.map((v, i) =>
-            (<Designer key={i} content={v.culture} step1={v.stepone1}/>)
+            (<Designer key={i} content={v.culture}/>)
         )
-        var Stepones = this.props.content.map((v, i) =>
+        var Stepones = this.props.con.map((v, i) =>
             (<Stepone key={i} stepone1={v.stepone1} stepone2={v.stepone2}/>)
         )
-        var Steptwos = this.props.content.map((v, i) =>
+        var Steptwos = this.props.con.map((v, i) =>
             (<Steptwo key={i} steptwo1={v.steptwo1} steptwo2={v.steptwo2}/>)
         )
-        var Stepthrees = this.props.content.map((v, i) =>
+        var Stepthrees = this.props.con.map((v, i) =>
             (<Stepthree key={i} stepthree1={v.stepthree1}/>)
         )
         return (
@@ -195,12 +215,16 @@ const content = [
     {
         content: '古代铁壶—经典复古风格',
         culture: '公司文化:公司以“专注网站,用心服务”为核心价值,一切以用户需求为中心,希望通过专业水平和不懈努力,重塑企业网络形象,为企业产品推广文化发展提供服务指导;塑企业网络形象,为企业产品推广文化发展提供塑企业网络形象,为企业产品推广文化发展提供',
+
+    }
+];
+const con = [
+    {
         stepone1:'/index/images/detail-2.png',
         stepone2:'/index/images/detail-3.png',
         steptwo1:'/index/images/detail-4.png',
         steptwo2:'/index/images/detail-5.png',
         stepthree1:'/index/images/detail-6.png',
-
     }
 ];
 const nav=[
@@ -210,4 +234,4 @@ const nav=[
     {title: '经典铁壶',href:'/product'},
     {title: '铁府首页',href:'/'}
 ];
-ReactDOM.render(<Detail data={data} content={content}/>, document.getElementById('bsl_detail'));
+ReactDOM.render(<Detail data={data} content={content} con={con}/>, document.getElementById('bsl_detail'));

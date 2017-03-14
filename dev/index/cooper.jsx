@@ -135,6 +135,27 @@ class Store extends React.Component {
     }
 }
 class Intention extends React.Component {
+    constructor(props) {
+        super(props);
+        this.submit = this.submit.bind(this);
+    }
+    submit(e) {
+        e.preventDefault();
+        var data = {name: this.name.value,city:this.city.value,intent:this.intent.value,view:this.view.value,type:this.type.value,charge:this.charge.value,content:this.content.value,num:this.num.value};
+        fetch('/message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'same-origin',
+            body: JSON.stringify(data)
+        }).then((res)=>res.json()).then((data)=> {
+            if (data !== 'err') {
+                alert('插入成功');
+            }
+        });
+        console.log(data)
+    }
     render() {
         return (
             <div className="intention-jby">
@@ -142,62 +163,64 @@ class Intention extends React.Component {
                     <div className="intentop">
                         <img src="/index/images/message-jby.png" alt=""/>
                     </div>
-                    <div className="intenbot">
-                        <div className="interface1">
-                            <div className="name">
-                                <div className="icon"></div>
-                                <input type="text" placeholder="如何称呼您 ......"/>
-                            </div>
-                            <div className="address">
-                                <div className="icon"></div>
-                                <input type="text" placeholder="您所在的城市 ......"/>
-                            </div>
-                            <div className="want">
-                                <div className="icon"></div>
-                                <input type="text" placeholder="您的意向大小 ......"/>
-                            </div>
-                        </div>
-                        <div className="interface2">
-                            <div className="view">
-                                <div className="icon"></div>
-                                <input type="text" placeholder="您的视觉取向 ......"/>
-                            </div>
-                            <div className="need">
-                                <div className="icon"></div>
-                                <input type="text" placeholder="您的需求类型 ......"/>
-                            </div>
-                            <div className="charge">
-                                <div className="icon"></div>
-                                <input type="text" placeholder="您的预算范围 ......"/>
-                            </div>
-                        </div>
-                        <div className="interface3">
-                            <div className="content">
-                                <div className="der">
-                                    <img src="/index/images/der-jby.png" alt=""/>
+                    <form method="post">
+                        <div className="intenbot">
+                            <div className="interface1">
+                                <div className="name">
+                                    <div className="icon"></div>
+                                    <input type="text" ref={(el)=>{this.name=el}} placeholder="如何称呼您 ......" name="name"/>
                                 </div>
-                                <div className="title"></div>
-                                <textarea name="name" id="" placeholder="您还想了解什么......"/>
-                            </div>
-                            <div className="bottom">
-                                <p className="topbox">您还可以输入<span>400</span>个字</p>
-                                <div className="botbox">
-                                    <div className="lefticon">
-                                        <img src="/index/images/minphone-jby.png" alt=""/>
-                                    </div>
-                                    <div className="rightphone">
-                                        <input type="text" placeholder="请输入您的手机号码"/>
-                                    </div>
+                                <div className="address">
+                                    <div className="icon"></div>
+                                    <input type="text" ref={(el)=>{this.city=el}} placeholder="您所在的城市 ......" name="city"/>
                                 </div>
-                                <div className="sendbox">
-                                    <div className="sendboxin">
-                                        <div className="lefticon"></div>
-                                        <p className="rightword">确认发送</p>
-                                    </div>
+                                <div className="want">
+                                    <div className="icon"></div>
+                                    <input type="text" ref={(el)=>{this.intent=el}} placeholder="您的意向大小 ......" name="intent"/>
                                 </div>
                             </div>
+                            <div className="interface2">
+                                <div className="view">
+                                    <div className="icon"></div>
+                                    <input type="text" ref={(el)=>{this.view=el}} placeholder="您的视觉取向 ......" name="view"/>
+                                </div>
+                                <div className="need">
+                                    <div className="icon"></div>
+                                    <input type="text" ref={(el)=>{this.type=el}} placeholder="您的需求类型 ......" name="type"/>
+                                </div>
+                                <div className="charge">
+                                    <div className="icon"></div>
+                                    <input type="text" ref={(el)=>{this.charge=el}} placeholder="您的预算范围 ......" name="charge"/>
+                                </div>
+                            </div>
+                            <div className="interface3">
+                                <div className="content">
+                                    <div className="der">
+                                        <img src="/index/images/der-jby.png" alt=""/>
+                                    </div>
+                                    <div className="title"></div>
+                                    <textarea ref={(el)=>{this.content=el}} name="content" id="" placeholder="您还想了解什么......" />
+                                </div>
+                                <div className="bottom">
+                                    <p className="topbox">您还可以输入<span>400</span>个字</p>
+                                    <div className="botbox">
+                                        <div className="lefticon">
+                                            <img src="/index/images/minphone-jby.png" alt=""/>
+                                        </div>
+                                        <div className="rightphone">
+                                            <input type="text" ref={(el)=>{this.num=el}} placeholder="请输入您的手机号码" name="num"/>
+                                        </div>
+                                    </div>
+                                    <div className="sendbox">
+                                        <div className="sendboxin">
+                                            <div className="lefticon"></div>
+                                            <p className="rightword" onClick={this.submit}>确认发送</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         )

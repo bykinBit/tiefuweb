@@ -2,7 +2,7 @@ const React=require('react');
 const ReactDOM=require('react-dom');
 const path=require('path');
 const nav=require('./nav.jsx');
-import { Layout, Menu, Icon ,Dropdown,Form,Table, Input, Button, Popconfirm, Upload,  message} from 'antd';
+import { Layout, Menu, Icon ,Dropdown,Form,Table, Input, Button, Popconfirm, Upload,  message,pagination} from 'antd';
 
 const FormItem = Form.Item;
 
@@ -31,7 +31,9 @@ function beforeUpload(file) {
 class Avatar extends React.Component {
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {
+
+        };
         this.handleChange=this.handleChange.bind(this);
     }
 
@@ -39,12 +41,28 @@ class Avatar extends React.Component {
     handleChange(info) {
         if (info.file.status === 'done') {
             // Get this url from response in real world.
-            getBase64(info.file.originFileObj, imageUrl => this.setState({ imageUrl }));
+            var t=getBase64(info.file.originFileObj, imageUrl => this.setState({ imageUrl }));
+            console.log(t);
+            // fetch('/admin/designer/imgUrl', {
+            //     method: 'post',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     credentials: 'same-origin',
+            //     body: this.state.imageUrl
+            // }).then((res)=>res.json()).then((data)=> {
+            //
+            // })
+
         }
     }
 
+
+
+
     render() {
         const imageUrl = this.state.imageUrl;
+        // console.log(this.state.imageUrl);
         return (
             <Upload
                 className="avatar-uploader"
@@ -63,6 +81,10 @@ class Avatar extends React.Component {
         );
     }
 }
+
+
+
+
 //上传图片
 class EditableCell extends React.Component {
     constructor(props){
@@ -158,40 +180,52 @@ class EditableTable extends React.Component {
             width:'20%',
             render: (text, record, index) => {
                 return (
-                    this.state.dataSource.length > 1 ?
-                        (
-                            <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(index)}>
-                                <a href="#">Delete</a>
-                            </Popconfirm>
-                        ) : null
+                    <a href={`/admin/designer/list/delete/${record.id}`}>Delete</a>
                 );
             },
         }];
 
         this.state = {
             dataSource: [{
-                key: '0',
-                name: 'Edward King 0',
-                img: '32',
-                describe: '公司文化:公司以“专注网站,用心服务”为核心价值,一切以用户需求为中心,希望通过专业水平和不懈努力,重塑企业网络形象公司文化:公司以“专注网站,用心服务”为核心价值,一切以用户需求为中心,希望通过专业水平和不懈努力,重塑企业网络形象',
-            }, {
-                key: '1',
-                name: 'Edward King 1',
-                img: '31',
-                describe: '公司文化:公司以“专注网站,用心服务”为核心价值,一切以用户需求为中心,希望通过专业水平和不懈努力,重塑企业网络形象',
+                key: '',
+                name: '',
+                img: '',
+                describe: '',
             }],
-            count: 2,
+            count:''
         };
         this.onCellChange=this.onCellChange.bind(this);
         this.onDelete=this.onDelete.bind(this);
         this.handleAdd=this.handleAdd.bind(this);
 
     }
+    componentDidMount() {
+        fetch('/admin/designer/all', {
+            credentials: 'same-origin'
+        }).then((res)=>res.json()).then((data)=> {
+            this.setState({
+                dataSource: data,
+                count:data.length
+            });
+        });
+    }
+
     onCellChange (index, key){
         return (value) => {
             const dataSource = [...this.state.dataSource];
             dataSource[index][key] = value;
             this.setState({ dataSource });
+            const dataSources=dataSource[index];
+            fetch('/admin/designer/update', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify(dataSources)
+            }).then((res)=>res.json()).then((data)=> {
+
+            })
         };
     }
     onDelete(index){
@@ -203,14 +237,23 @@ class EditableTable extends React.Component {
         const { count, dataSource } = this.state;
         const newData = {
             key: count,
-            name: `Edward King ${count}`,
-            img: 32,
-            describe: `${count}`,
+            name: '',
+            img: '',
+            describe: '',
         };
         this.setState({
             dataSource: [...dataSource, newData],
             count: count + 1,
         });
+        fetch(`/admin/designer/add`, {
+            credentials:'same-origin',
+            method:'post',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((res)=>res.json()).then((data)=>{
+        })
+
     }
     render() {
         const { dataSource } = this.state;
@@ -218,12 +261,12 @@ class EditableTable extends React.Component {
         return (
             <div>
                 <Button className="editable-add-btn" onClick={this.handleAdd}>添加</Button>
-                <Table bordered dataSource={dataSource} columns={columns} />
+                <Table bordered pagination={{pageSize:3,pageSizeOptions:['3'],defaultPageSize:3}} dataSource={this.state.dataSource} columns={columns} />
             </div>
         );
     }
 }
-//上传图片结
+//上传图片结束
 ReactDOM.render(
     <nav.AppNav>
         <EditableTable />

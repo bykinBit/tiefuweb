@@ -37,6 +37,7 @@ router.get('/news/list',(req,res)=>{
 router.get('/designer/list',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/designer.html'));
 });
+
 router.get('/about_us',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/about_us.html'));
 });
@@ -60,6 +61,7 @@ router.get('/about_us/delete/:id',(req,res)=>{
         res.redirect('/admin/about_us');
     });
 });
+<<<<<<< HEAD
 router.get('/news/all',(req,res)=>{
     mysql.query('select * from news',  (err, data)=> {
         res.json(data);
@@ -89,3 +91,48 @@ router.post('/news/update',(req,res)=>{
 
 });
 module.exports=router;
+=======
+
+// 设计师
+router.get('/designer/all', (req, res)=> {
+    mysql.query('select * from designer', (err, data)=> {
+        res.json(data);
+    })
+});
+router.post('/designer/add', (req, res)=> {
+    mysql.query("INSERT INTO `designer` (`id`, `name`, `describe`, `img`) VALUES (NULL, '', '', '')",[],(err,result)=>{
+        res.json(result);
+    })
+});
+router.post('/designer/update', (req,res)=> {
+    mysql.query("UPDATE designer SET `name` = ?, `describe` = ? WHERE `id` = ?",[req.body.name,req.body.describe,req.body.id], (err, data)=> {
+        res.json(data);
+    })
+});
+router.get('/designer/list/delete/:id', (req, res)=> {
+    mysql.query('delete from designer where id = ?',
+        [req.params.id], function (err, data) {
+            if (!err) {
+                res.redirect('/admin/designer/list');
+            }
+        })
+})
+// 获取留言
+router.get('/message/all', (req, res)=> {
+    mysql.query('select * from intention', (err, data)=> {
+        res.json(data);
+    })
+});
+// 留言删除
+router.get('/message/delete/:id', (req, res)=> {
+    console.log(req);
+    mysql.query('delete from intention where id = ?',
+        [req.params.id], function (err, data) {
+            if (!err) {
+                res.redirect('/admin/message');
+            }
+        })
+});
+
+module.exports=router;
+>>>>>>> ab332483413e2b72b624d607090133f6fdceb8a2
