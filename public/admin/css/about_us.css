@@ -3,12 +3,6 @@
     padding:0;
     list-style: none;
 }
-#page .ant-btn {
-    margin-right: 8px;
-    margin-bottom: 8px;
-}
-
-/*上传图片*/
 .editable-cell {
     position: relative;
 }
@@ -50,37 +44,4 @@
 
 .editable-add-btn {
     margin-bottom: 8px;
-    background:#108EE9;
-    color: #fff;
-}
-
-/*图片框*/
-.avatar-uploader,
-.avatar-uploader-trigger,
-.avatar {
-    width: 100px;
-    height: 100px;
-    margin-left: 30px;
-}
-.avatar-uploader{
-    overflow: hidden;
-}
-.avatar{
-    margin-left: 0;
-}
-.avatar-uploader {
-    display: block;
-    border: 1px dashed #d9d9d9;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.avatar-uploader-trigger {
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 28px;
-    color: #999;
-}
-
-.ant-table-pagination{
-    display: none;
 }

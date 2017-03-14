@@ -1,23 +1,40 @@
 const express=require('express');
 const path=require('path');
+const fs=require('fs');
+const mysql=require('../mysql.js');
+const multer=require('multer');
+const upload=multer({dest:'uploads/'});
+const async=require('async');
 const router=express.Router();
-const mysql = require('../mysql');
 router.get('/',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/admin.html'));
 });
-router.get('/iron_pot',(req,res)=>{
+router.get('/out',(req,res)=>{
+    req.session.login=null;
+    res.clearCookie('hash',{path:'/'});
+    res.redirect('/login');
+});
+router.post('/txt',upload.single('wangEditorH5File'),(req,res)=>{
+    var o=fs.createWriteStream(path.resolve('public/admin/images/'+req.file.originalname));
+    fs.createReadStream(path.resolve(req.file.path)).pipe(o);
+    o.on('finish',function(){
+        fs.unlink(path.resolve(req.file.path))
+    });
+    res.end('/admin/images/'+req.file.originalname);
+});
+router.get('/products/list',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/iron_pot.html'));
 });
 router.get('/message',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/message.html'));
 });
-router.get('/update',(req,res)=>{
+router.get('/user/add',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/update.html'));
 });
-router.get('/news',(req,res)=>{
+router.get('/news/list',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/news.html'));
 });
-router.get('/designer',(req,res)=>{
+router.get('/designer/list',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/designer.html'));
 });
 router.get('/about_us',(req,res)=>{
@@ -42,4 +59,3 @@ router.get('/message/delete/:id', (req, res)=> {
 });
 
 module.exports=router;
-//npm install forever -g可以自动重启服务，不必要手动启动
