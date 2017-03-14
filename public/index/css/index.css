@@ -55,14 +55,15 @@
 /*导航结束*/
 /*banner*/
 
-@media (max-width:1920px) {
+/*@media (max-width:1920px) {*/
     .banner{
         width: 100%;
         height: 800px;
+        margin:0 auto;
         position: relative;
     }
     .bannerbox{
-        width: 1920px;
+        width: 100%;
         height: 800px;
         left:0;
         right:0;
@@ -71,7 +72,7 @@
         overflow: hidden;
     }
     .imgbox{
-        width: 1200px;
+        width: 100%;
         height: 100%;
         position:relative;
     }
@@ -81,10 +82,9 @@
         left: 0;
         right: 0;
         margin: 0 auto;
-        width: 1200px;
+        width: 100%;
         height: 100%;
         transition: all 1s ease;
-
     }
     .slides img {
         position: absolute;
@@ -129,7 +129,7 @@
     .bannerright:hover{
         opacity: 1;
     }
-}
+/*}*/
 @media (max-width:1366px) {
     .banner{
         width: 100%;

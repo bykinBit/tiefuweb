@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Common=require('./common.jsx');
+const Common = require('./common.jsx');
 const path = require('path');
 class Crumbs extends React.Component {
     render() {
@@ -14,7 +14,26 @@ class Crumbs extends React.Component {
     }
 }
 class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataSource: []
+        }
+    }
+
+    componentDidMount() {
+        fetch('/contact/about_us', {
+            credentials: 'same-origin'
+        }).then((res) => {
+            res.json()
+        }).then((data) => {
+            this.setState({
+                dataSource: data
+            })
+        });
+    }
     render() {
+        console.log(this.state.dataSource);
         return (
             <div className="container-jby">
                 <div className="topline-jby"></div>
@@ -186,6 +205,10 @@ class Intention extends React.Component {
     }
 }
 class Coo extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <div>
@@ -202,11 +225,11 @@ class Coo extends React.Component {
         )
     }
 }
-const nav=[
-    {title: '最新资讯',href:'/news'},
-    {title: '合作加盟',href:'/contact'},
-    {title: '铸铁文化',href:'/culture'},
-    {title: '经典铁壶',href:'/product'},
-    {title: '铁府首页',href:'/'}
+const nav = [
+    {title: '最新资讯', href: '/news'},
+    {title: '合作加盟', href: '/contact'},
+    {title: '铸铁文化', href: '/culture'},
+    {title: '经典铁壶', href: '/product'},
+    {title: '铁府首页', href: '/'}
 ];
 ReactDOM.render(<Coo/>, document.getElementById('page'));

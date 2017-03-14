@@ -1,5 +1,10 @@
 const express=require('express');
 const path=require('path');
+const fs=require('fs');
+const mysql=require('../mysql.js');
+const multer=require('multer');
+const upload=multer({dest:'uploads/'});
+const async=require('async');
 const router=express.Router();
 router.get('/',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/admin.html'));
@@ -8,6 +13,14 @@ router.get('/out',(req,res)=>{
     req.session.login=null;
     res.clearCookie('hash',{path:'/'});
     res.redirect('/login');
+});
+router.post('/txt',upload.single('wangEditorH5File'),(req,res)=>{
+    var o=fs.createWriteStream(path.resolve('public/admin/images/'+req.file.originalname));
+    fs.createReadStream(path.resolve(req.file.path)).pipe(o);
+    o.on('finish',function(){
+        fs.unlink(path.resolve(req.file.path))
+    });
+    res.end('/admin/images/'+req.file.originalname);
 });
 router.get('/products/list',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/iron_pot.html'));
@@ -27,5 +40,26 @@ router.get('/designer/list',(req,res)=>{
 router.get('/about_us',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/about_us.html'));
 });
+router.get('/about_us/all',(req,res)=>{
+    mysql.query('select * from about_us',[],(err,result)=>{
+       res.json(result);
+    });
+});
+router.post('/about_us/update',(req,res)=>{
+    console.log(req.body);
+        mysql.query('update about_us set phone=?,email=?,address=? where id=?',[req.body.phone,req.body.email,req.body.address,req.body.id],(err,result)=>{
+            res.json('ok');
+        });
+});
+router.post('/about_us/add',(req,res)=>{
+    console.log(req.body);
+    mysql.query("insert into about_us (id,email,phone,address) values (null,'111854498@163.com','1225497879','London, Park Lane no. 2')",[],(err,result)=>{
+        res.json('ok');
+    });
+});
+router.get('/about_us/delete/:id',(req,res)=>{
+    mysql.query("delete from about_us where id=?",[req.params.id],(err,result)=>{
+        res.redirect('/admin/about_us');
+    });
+});
 module.exports=router;
-//npm install forever -g可以自动重启服务，不必要手动启动

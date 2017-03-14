@@ -77,6 +77,16 @@ class Intention extends React.Component {
                 charge: '1000-80000',
                 num: '152345648456',
                 content:'awjdljalwjdilawjdlajwil122222222222222jdlajiddjwlid'
+            },{
+                key: '2',
+                name: 'John Brown',
+                city: '太原',
+                intent: '大',
+                view: '美',
+                type: '礼品铁壶',
+                charge: '1000-80000',
+                num: '152345648456',
+                content:'awjdljalwjdilawjdlajwil122222222222222jdlajiddjwlid'
             }]
         };
 

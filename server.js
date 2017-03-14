@@ -20,13 +20,13 @@ app.use(session({
 }));
 app.use('/',indexRouter);
 app.use('/login',loginRouter);
-app.use('/admin',function(req,res,next){//中间件
-    if(req.session.login==='login'){
-        next();
-    }else{
-        res.redirect('/login');
-    }
-});
+// app.use('/admin',function(req,res,next){//中间件
+//     if(req.session.login==='login'){
+//         next();
+//     }else{
+//         res.redirect('/login');
+//     }
+// });
 app.use('/admin',adminRouter);
 app.listen(3002,()=>{
     console.log('服务器已经启动');
