@@ -15,3 +15,7 @@
     margin-right: 8px;
     margin-bottom: 8px;
 }
+
+#page .ant-table-row.ant-table-row-level-0 td{
+    height:30px;
+}

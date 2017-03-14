@@ -1,6 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const path=require('path');
+const mysql = require('../mysql.js');
 router.get('/',(req,res)=>{
     res.sendFile(path.resolve('./views/index/index.html'));
 });
@@ -17,6 +18,17 @@ router.get('/news/:cat_id/:news_id',(req,res)=>{
 });
 router.get('/contact',(req,res)=>{
     res.sendFile(path.resolve('./views/index/cooper.html'));
+});
+router.post('/message', (req, res)=> {
+    console.log(req.body);
+    mysql.query('insert into intention (name,city,intent,view,type,charge,content,num) values(?,?,?,?,?,?,?,?)',
+        [`${req.body.name}`, `${req.body.city}`, `${req.body.intent}`,`${req.body.view}`, `${req.body.type}`, `${req.body.charge}`, `${req.body.content}`, `${req.body.num}`], (err, data)=> {
+            if (err) {
+                res.json('err');
+            } else {
+                res.json(data.insertId);
+            }
+        });
 });
 router.get('/culture',(req,res)=>{
     res.sendFile(path.resolve('./views/index/culture.html'));

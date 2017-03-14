@@ -19,31 +19,24 @@ class Intention extends React.Component {
         this.columns = [{
             title: '名字',
             dataIndex: 'name',
-            width: '8%',
         }, {
             title: '地址',
             dataIndex: 'city',
-            width: '10%',
         }, {
             title: '意向大小',
             dataIndex: 'intent',
-            width: '8%',
         }, {
             title: '视觉取向',
             dataIndex: 'view',
-            width: '8%',
         }, {
             title: '需求类型',
             dataIndex: 'type',
-            width: '8%',
         }, {
             title: '预算范围',
             dataIndex: 'charge',
-            width: '10%',
         }, {
             title: '电话',
             dataIndex: 'num',
-            width: '10%',
         },{
             title: '留言',
             dataIndex: 'content',
@@ -51,68 +44,46 @@ class Intention extends React.Component {
         },{
             title: '删除',
             dataIndex: 'operation',
-            width: '8%',
             render: (text, record, index) => {
                 return (
-                    this.state.dataSource.length > 0 ?
-                        (
-                            <Popconfirm title="确定要删除吗?" onConfirm={() => this.onDelete(index)}>
-                                <a href="#">删除</a>
-                            </Popconfirm>
-                        ) : null
+                            // <Popconfirm title="确定要删除吗?" onConfirm={() => this.onDelete(index)}>
+                            //     <a href={`/admin/message/delete/${record.id}`}>delete</a>
+                            // </Popconfirm>
+                            <a href={`/admin/message/delete/${record.id}`}>delete</a>
+
                 );
             },
         }];
 
         this.state= {
-            dataSource: [{
-                key: '0',
-                name: 'John Brown',
-                city: '太原',
-                intent: '大',
-                view: '美',
-                type: '礼品铁壶',
-                charge: '1000-80000',
-                num: '152345648456',
-                content:'字字字字字sdfsdfs字字字字字'
-            },{
-                key: '1',
-                name: 'John Brown',
-                city: '太原',
-                intent: '大',
-                view: '美',
-                type: '礼品铁壶',
-                charge: '1000-80000',
-                num: '152345648456',
-                content:'awjdljalwjdilawjdlajwil122222222222222jdlajiddjwlid'
-            },{
-                key: '2',
-                name: 'John Brown',
-                city: '太原',
-                intent: '大',
-                view: '美',
-                type: '礼品铁壶',
-                charge: '1000-80000',
-                num: '152345648456',
-                content:'awjdljalwjdilawjdlajwil122222222222222jdlajiddjwlid'
-            }]
-        };
+            dataSource: []
+        }
 
+
+    };
+    componentDidMount(){
+        fetch('/admin/message/all', {
+            credentials: 'same-origin'
+        }).then((res)=>res.json()).then((data)=> {
+            this.setState({
+                dataSource: data
+            });
+        });
     }
 
 
-
-    onDelete  (index)  {
+    onDelete (index) {
         const dataSource = [...this.state.dataSource];
         dataSource.splice(index, 1);
         this.setState({ dataSource });
     };
-    render() {
-        const { dataSource } = this.state;
+    render(){
+
         const columns = this.columns;
+        console.log(this.state.dataSource);
         return (
             <div>
-                <Table bordered dataSource={dataSource} columns={columns} />
+                <Table bordered dataSource={this.state.dataSource} columns={columns} />
             </div>
         );
     }
