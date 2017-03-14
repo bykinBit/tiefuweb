@@ -1,11 +1,11 @@
 /*头部开始*/
 .banner_g{
     width: 100%;
-    height: 430px;
+    height: 598px;
 }
 .banner_gzl{
     width: 100%;
-    height: 430px;
+    height: 598px;
     background: url(/index/images/g_09.png) no-repeat center center;
     background-size:cover ;
 }
@@ -51,6 +51,7 @@
     left:6px;
     transition: all .4s ease;
     background:  url(/index/images/bin_tline.png);
+    opacity:0;
 }
 .bin_line2{
     width:0;
@@ -72,7 +73,8 @@ body{
     height:auto;
     margin:-30px auto;
     background: #ffffff;
-    padding-bottom:30px;
+    padding-bottom:140px;
+    box-shadow:0 10px 20px #b6b6b6;
 }
 .g_xian{
     width: 100%;
@@ -177,7 +179,6 @@ body{
     height: auto;
     width: 100%;
     background: #262626;
-    margin-top: 100px;
 }
 
 .bin_footer {

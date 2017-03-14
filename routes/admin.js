@@ -46,13 +46,11 @@ router.get('/about_us/all',(req,res)=>{
     });
 });
 router.post('/about_us/update',(req,res)=>{
-    console.log(req.body);
         mysql.query('update about_us set phone=?,email=?,address=? where id=?',[req.body.phone,req.body.email,req.body.address,req.body.id],(err,result)=>{
             res.json('ok');
         });
 });
 router.post('/about_us/add',(req,res)=>{
-    console.log(req.body);
     mysql.query("insert into about_us (id,email,phone,address) values (null,'111854498@163.com','1225497879','London, Park Lane no. 2')",[],(err,result)=>{
         res.json('ok');
     });
@@ -61,5 +59,33 @@ router.get('/about_us/delete/:id',(req,res)=>{
     mysql.query("delete from about_us where id=?",[req.params.id],(err,result)=>{
         res.redirect('/admin/about_us');
     });
+});
+router.get('/news/all',(req,res)=>{
+    mysql.query('select * from news',  (err, data)=> {
+        res.json(data);
+    })
+
+});
+//删除
+router.get('/news/delete/:id', (req, res)=> {
+    mysql.query('delete from news where id = ?',
+        [req.params.id], function (err, data) {
+            if (!err) {
+                res.redirect('/admin/news/list');
+            }
+        })
+});
+//插入
+router.post('/news/insert', (req, res)=> {
+    mysql.query("INSERT INTO `tiefu`.`news` (`id`, `title`, `content`, `img`, `inserttime`, `describ`, `is_today`) VALUES (NULL, '', '', '', '', '', '')",(err,res)=>{
+        res.end('ok');
+    })
+});
+//更新
+router.post('/news/update',(req,res)=>{
+    mysql.query('update news set title=?,content=?,describ=? where id=?',[req.body.title,req.body.content,req.body.describ,req.body.id],  (err, data)=> {
+        res.json(data);
+    })
+
 });
 module.exports=router;

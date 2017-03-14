@@ -395,6 +395,7 @@ add_zxd{
     left:2px;
     transition: all .4s ease;
     background: url(/index/images/bin_tline.png);
+    opacity:0;
 }
 .bin_line2{
     width:0;

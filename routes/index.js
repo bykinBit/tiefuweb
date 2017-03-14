@@ -21,7 +21,6 @@ router.get('/contact',(req,res)=>{
 });
 router.get('/contact/about_us',(req,res)=>{
     mysql.query('select * from about_us',[],(err,data)=>{
-        console.log(data[0]);
         res.json(data);
     })
 });

@@ -33,7 +33,6 @@ class Contact extends React.Component {
         });
     }
     render() {
-        console.log(this.state.dataSource);
         return (
             <div className="container-jby">
                 <div className="topline-jby"></div>
@@ -59,7 +58,7 @@ class Contact extends React.Component {
                                         <b className="worden">OFFICE &nbsp;ADDRESS</b>
                                     </div>
                                     <div className="bottominbot-jby">
-                                        <p className="word">山西 太原 迎泽区 双塔西街 邮电大厦 7层 123室</p>
+                                        <p className="word">太原清华科技园A座</p>
                                     </div>
                                 </div>
                             </div>
@@ -69,14 +68,14 @@ class Contact extends React.Component {
                                 </div>
                                 <div className="bottom-jby">
                                     <div className="bottomintop-jby">
-                                        <span className="address">地址</span>
+                                        <span className="address">邮箱</span>
                                         <em className="line">
                                             <img src="/index/images/line-jby.png" alt=""/>
                                         </em>
-                                        <b className="worden">OFFICE &nbsp;ADDRESS</b>
+                                        <b className="worden"> E-MAIL&nbsp;ADDRESS</b>
                                     </div>
                                     <div className="bottominbot-jby">
-                                        <p className="word">山西 太原 迎泽区 双塔西街 邮电大厦 7层 123室</p>
+                                        <p className="word">YANGYANGDEYI@163.COM</p>
                                     </div>
                                 </div>
                             </div>
@@ -86,14 +85,14 @@ class Contact extends React.Component {
                                 </div>
                                 <div className="bottom-jby">
                                     <div className="bottomintop-jby">
-                                        <span className="address">地址</span>
+                                        <span className="address">电话</span>
                                         <em className="line">
                                             <img src="/index/images/line-jby.png" alt=""/>
                                         </em>
-                                        <b className="worden">OFFICE &nbsp;ADDRESS</b>
+                                        <b className="worden"> PHONE&nbsp;NUMBER</b>
                                     </div>
                                     <div className="bottominbot-jby">
-                                        <p className="word">山西 太原 迎泽区 双塔西街 邮电大厦 7层 123室</p>
+                                        <p className="word">412-232-222/412-222-123</p>
                                     </div>
                                 </div>
                             </div>
@@ -115,17 +114,17 @@ class Store extends React.Component {
                     <div className="storeinbot">
                         <div className="storeaddre">
                             <div className="storeaddretop">
-                                <p className="word">北京市区门店地址<span>STORE ADDRESS</span></p>
+                                <p className="word">太原市区门店地址<span>STORE ADDRESS</span></p>
                             </div>
                             <div className="storeaddrebot">
-                                <p className="addressdetail">北京市朝阳区北三环东路8号静安中心17层</p>
-                                <p className="addressph">400-123-123</p>
+                                <p className="addressdetail">太原清华科技园A座</p>
+                                <p className="addressph">400-0351-186</p>
                             </div>
                         </div>
                         <div className="storecity">
                             <div className="storecityin">
                                 <div className="storedotleft"/>
-                                <div className="storename">上海店 SHANGHAI</div>
+                                <div className="storename">太原店 TAIYUAN</div>
                                 <div className="storedotright"/>
                             </div>
                         </div>

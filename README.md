@@ -9,6 +9,8 @@ npm install webpack -g
 npm install
  运行此命令就会安装所有依赖项，保证文件正常运行
  npm install compression
+ npm install multer
+ npm install async
 ```
 ```
 3.启动项目

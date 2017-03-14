@@ -204,12 +204,10 @@ const content = [
     }
 ];
 const nav=[
-    {title: '其他定制',href:'http://localhost:3001/views/cooper.html'},
-    {title: '最新资讯',href:'http://localhost:3001/views/details.html'},
-    {title: '合作加盟',href:'http://localhost:3001/views/cooper.html'},
-    {title: '铸铁文化',href:'http://localhost:3001/views/culture.html'},
-    {title: '铁器礼品',href:'http://localhost:3001/views/productShow.html'},
-    {title: '经典铁壶',href:'http://localhost:3001/views/productShow.html'},
-    {title: '铁府首页',href:'http://localhost:3001/views/index.html'}
+    {title: '最新资讯',href:'/news'},
+    {title: '合作加盟',href:'/contact'},
+    {title: '铸铁文化',href:'/culture'},
+    {title: '经典铁壶',href:'/product'},
+    {title: '铁府首页',href:'/'}
 ];
 ReactDOM.render(<Detail data={data} content={content}/>, document.getElementById('bsl_detail'));

@@ -26,8 +26,6 @@ class Frame extends React.Component {
         } else {
             var selectKeys = [urlInfo.slice(0, urlInfo.length).join('/')];
         }
-        console.log(location);
-        console.log(openKeys, selectKeys);
         return (
             <Layout>
                 <Header className="header" theme="dark" style={{height: '80px',position:'relative'}}>
@@ -54,27 +52,27 @@ class Frame extends React.Component {
                             mode={this.state.mode}
                             defaultOpenKeys={openKeys}
                             defaultSelectedKeys={selectKeys}>
-                            <SubMenu
-                                key="admin/user"
-                                title={<span><Icon type="user"/><span className="nav-text">管理员</span></span>}
-                            >
-                                <Menu.Item key="admin/user/add"><a href="/admin/user/add">增加管理员</a></Menu.Item>
-                                <Menu.Item key="admin/user/password"><a href="/admin/user/add">修改密码</a></Menu.Item>
-                            </SubMenu>
+                            {/*<SubMenu*/}
+                                {/*key="admin/user"*/}
+                                {/*title={<span><Icon type="user"/><span className="nav-text">管理员</span></span>}*/}
+                            {/*>*/}
+                                {/*<Menu.Item key="admin/user/add"><a href="/admin/user/add">增加管理员</a></Menu.Item>*/}
+                                {/*<Menu.Item key="admin/user/password"><a href="/admin/user/add">修改密码</a></Menu.Item>*/}
+                            {/*</SubMenu>*/}
                             <SubMenu
                                 key="admin/news"
                                 title={<span><Icon type="team"/><span className="nav-text">新闻管理</span></span>}
                             >
                                 <Menu.Item key="admin/news/list"><a href="/admin/news/list">新闻列表</a></Menu.Item>
-                                <Menu.Item key="admin/news/add"><a href="/admin/news/list">管理新闻</a></Menu.Item>
+                                {/*<Menu.Item key="admin/news/add"><a href="/admin/news/list">管理新闻</a></Menu.Item>*/}
                             </SubMenu>
-                            <SubMenu
-                                key="admin/products"
-                                title={<span><Icon type="trademark"/><span className="nav-text">产品管理</span></span>}
-                            >
-                                <Menu.Item key="admin/products/list"><a href="/admin/products/list">产品列表</a></Menu.Item>
-                                <Menu.Item key="admin/products/add"><a href="/admin/products/list">管理产品</a></Menu.Item>
-                            </SubMenu>
+                            {/*<SubMenu*/}
+                                {/*key="admin/products"*/}
+                                {/*title={<span><Icon type="trademark"/><span className="nav-text">产品管理</span></span>}*/}
+                            {/*>*/}
+                                {/*<Menu.Item key="admin/products/list"><a href="/admin/products/list">产品列表</a></Menu.Item>*/}
+                                {/*<Menu.Item key="admin/products/add"><a href="/admin/products/list">管理产品</a></Menu.Item>*/}
+                            {/*</SubMenu>*/}
                             <SubMenu
                                 key="admin/designer"
                                 title={<span><Icon type="user-add"/><span className="nav-text">设计师管理</span></span>}

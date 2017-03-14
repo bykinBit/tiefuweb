@@ -1,7 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const path = require('path');
-const o=require('./wangEditor.jsx');
 const nav = require('./nav.jsx');
 import { Menu, Icon, Button, Card, Row, Input, Table, Popconfirm} from 'antd';
 const {SubMenu} = Menu;
@@ -126,7 +125,6 @@ class EditableTable extends React.Component {
             dataSource[index][key] = value;
             this.setState({dataSource});
             const dataSources=dataSource[index];
-            console.log(dataSources);
             fetch('/admin/about_us/update', {
                     method: 'POST',
                     // 让session生效
@@ -197,6 +195,6 @@ class EditableTable extends React.Component {
 }
 ReactDOM.render(
     <nav.AppNav>
-        <EditableTable />
+        <EditableTable/>
     </nav.AppNav>
     , document.querySelector('#page'));

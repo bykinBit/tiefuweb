@@ -18,12 +18,10 @@ router.get('/',(req,res)=>{
     })
 });
 router.post('/check',(req,res)=>{
-    console.log(req.body);
     var hash=crypto.createHash('md5');
     hash.update(req.body.password);
     var x=hash.digest('hex');
    mysql.query('select * from admin where account=?',[req.body.userName],function (err,result) {
-       console.log(result);
        if(result.length===0){
            res.redirect('/login');
        }else{
