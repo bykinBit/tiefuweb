@@ -50,7 +50,6 @@ class Intention extends React.Component {
         this.state= {
             dataSource: []
         }
-
     };
     componentDidMount(){
         fetch('/admin/message/all', {
@@ -61,8 +60,6 @@ class Intention extends React.Component {
             });
         });
     }
-
-
     onDelete  (index)  {
         const dataSource = [...this.state.dataSource];
         dataSource.splice(index, 1);
@@ -71,7 +68,6 @@ class Intention extends React.Component {
     render(){
 
         const columns = this.columns;
-        console.log(this.state.dataSource);
         return (
             <div>
                 <Table bordered dataSource={this.state.dataSource} columns={columns} />

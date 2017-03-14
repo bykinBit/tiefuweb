@@ -61,7 +61,6 @@ router.get('/about_us/delete/:id',(req,res)=>{
         res.redirect('/admin/about_us');
     });
 });
-<<<<<<< HEAD
 router.get('/news/all',(req,res)=>{
     mysql.query('select * from news',  (err, data)=> {
         res.json(data);
@@ -91,7 +90,6 @@ router.post('/news/update',(req,res)=>{
 
 });
 module.exports=router;
-=======
 
 // 设计师
 router.get('/designer/all', (req, res)=> {
@@ -135,4 +133,3 @@ router.get('/message/delete/:id', (req, res)=> {
 });
 
 module.exports=router;
->>>>>>> ab332483413e2b72b624d607090133f6fdceb8a2
