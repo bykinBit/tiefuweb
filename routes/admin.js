@@ -87,8 +87,22 @@ router.get('/designer/list/delete/:id', (req, res)=> {
                 res.redirect('/admin/designer/list');
             }
         })
+})
+// 获取留言
+router.get('/message/all', (req, res)=> {
+    mysql.query('select * from intention', (err, data)=> {
+        res.json(data);
+    })
 });
-
-
+// 留言删除
+router.get('/message/delete/:id', (req, res)=> {
+    console.log(req);
+    mysql.query('delete from intention where id = ?',
+        [req.params.id], function (err, data) {
+            if (!err) {
+                res.redirect('/admin/message');
+            }
+        })
+});
 
 module.exports=router;

@@ -7,6 +7,8 @@ module.exports = {
         // iron_pot: path.resolve('./dev/admin/iron_pot.jsx'),
         designer: path.resolve('./dev/admin/designer.jsx')
         // message: path.resolve('./dev/admin/message.jsx'),
+        // designer: path.resolve('./dev/admin/designer.jsx'),
+        // message: path.resolve('./dev/admin/message.jsx')
         // update: path.resolve('./dev/admin/update.jsx'),
         // news: path.resolve('./dev/admin/news.jsx'),
         // about_us: path.resolve('./dev/admin/about_us.jsx')
@@ -30,14 +32,14 @@ module.exports = {
         }]
     },
     plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })]
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })]
 };
