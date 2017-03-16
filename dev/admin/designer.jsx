@@ -1,13 +1,8 @@
-const React=require('react');
-const ReactDOM=require('react-dom');
-const path=require('path');
-const nav=require('./nav.jsx');
-import { Layout, Menu, Icon ,Dropdown,Form,Table, Input, Button, Popconfirm, Upload,  message,pagination} from 'antd';
-
-const FormItem = Form.Item;
-
-
-const { SubMenu } = Menu;
+const React = require('react');
+const ReactDOM = require('react-dom');
+const path = require('path');
+const nav = require('./nav.jsx');
+import {Layout, Menu, Icon, Dropdown, Form, Table, Input, Button, Popconfirm, Upload, message, pagination} from 'antd';
 
 // 图片框
 function getBase64(img, callback) {
@@ -29,40 +24,37 @@ function beforeUpload(file) {
 }
 
 class Avatar extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-
-        };
-        this.handleChange=this.handleChange.bind(this);
+        this.state = {};
+        this.handleChange = this.handleChange.bind(this);
     }
-
 
     handleChange(info) {
         if (info.file.status === 'done') {
             // Get this url from response in real world.
-            var t=getBase64(info.file.originFileObj, imageUrl => this.setState({ imageUrl }));
-            console.log(t);
-            // fetch('/admin/designer/imgUrl', {
-            //     method: 'post',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     credentials: 'same-origin',
-            //     body: this.state.imageUrl
-            // }).then((res)=>res.json()).then((data)=> {
-            //
-            // })
-
+            getBase64(info.file.originFileObj, imageUrl => this.setState({imageUrl}));
+            const data = {
+                url: info.file.response,
+                id: this.props.Id
+            };
+            fetch('/admin/update/img', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify(data)
+            }).then((res) => {
+                res.json()
+            }).then((data) => {
+                alert('上传成功！');
+            });
         }
-    }
-
-
-
+    };
 
     render() {
         const imageUrl = this.state.imageUrl;
-        // console.log(this.state.imageUrl);
         return (
             <Upload
                 className="avatar-uploader"
@@ -74,45 +66,43 @@ class Avatar extends React.Component {
             >
                 {
                     imageUrl ?
-                        <img src={imageUrl} alt="" className="avatar" /> :
-                        <Icon type="plus" className="avatar-uploader-trigger" />
+                        <img src={imageUrl} alt="" className="avatar"/> :(this.props.Value? <img src={this.props.Value} alt="" className="avatar"/>: <Icon type="plus" className="avatar-uploader-trigger"/>)
                 }
             </Upload>
         );
     }
 }
-
-
-
-
 //上传图片
 class EditableCell extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
             value: this.props.value,
             editable: false,
         }
-        this.handleChange=this.handleChange.bind(this);
-        this.check=this.check.bind(this);
-        this.edit=this.edit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.check = this.check.bind(this);
+        this.edit = this.edit.bind(this);
     }
-    handleChange(e){
+
+    handleChange(e) {
         const value = e.target.value;
-        this.setState({ value });
+        this.setState({value});
     }
-    check(){
-        this.setState({ editable: false });
+
+    check() {
+        this.setState({editable: false});
         if (this.props.onChange) {
             this.props.onChange(this.state.value);
         }
     }
-    edit(){
-        this.setState({ editable: true });
+
+    edit() {
+        this.setState({editable: true});
     }
 
     render() {
-        const { value, editable } = this.state;
+        const {value, editable} = this.state;
         return (
             <div className="editable-cell">
                 {
@@ -150,14 +140,14 @@ class EditableTable extends React.Component {
         this.columns = [{
             title: 'img',
             dataIndex: 'img',
-            width: '20%',
+            width: '15%',
             render: (text, record, index) => (
-                <Avatar />
-            ),
+                    <Avatar Id={record.id} Value={text}/>
+            )
         }, {
             title: 'name',
             dataIndex: 'name',
-            width: '20%',
+            width: '25%',
             render: (text, record, index) => (
                 <EditableCell
                     value={text}
@@ -167,7 +157,7 @@ class EditableTable extends React.Component {
         }, {
             title: 'describe',
             dataIndex: 'describe',
-            width:'40%',
+            width: '40%',
             render: (text, record, index) => (
                 <EditableCell
                     value={text}
@@ -177,7 +167,7 @@ class EditableTable extends React.Component {
         }, {
             title: 'operation',
             dataIndex: 'operation',
-            width:'20%',
+            width: '20%',
             render: (text, record, index) => {
                 return (
                     <a href={`/admin/designer/list/delete/${record.id}`}>Delete</a>
@@ -192,30 +182,31 @@ class EditableTable extends React.Component {
                 img: '',
                 describe: '',
             }],
-            count:''
+            count: ''
         };
-        this.onCellChange=this.onCellChange.bind(this);
-        this.onDelete=this.onDelete.bind(this);
-        this.handleAdd=this.handleAdd.bind(this);
+        this.onCellChange = this.onCellChange.bind(this);
+        this.onDelete = this.onDelete.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
 
     }
+
     componentDidMount() {
         fetch('/admin/designer/all', {
             credentials: 'same-origin'
-        }).then((res)=>res.json()).then((data)=> {
+        }).then((res) => res.json()).then((data) => {
             this.setState({
                 dataSource: data,
-                count:data.length
+                count: data.length
             });
         });
     }
 
-    onCellChange (index, key){
+    onCellChange(index, key) {
         return (value) => {
             const dataSource = [...this.state.dataSource];
             dataSource[index][key] = value;
-            this.setState({ dataSource });
-            const dataSources=dataSource[index];
+            this.setState({dataSource});
+            const dataSources = dataSource[index];
             fetch('/admin/designer/update', {
                 method: 'post',
                 headers: {
@@ -223,18 +214,20 @@ class EditableTable extends React.Component {
                 },
                 credentials: 'same-origin',
                 body: JSON.stringify(dataSources)
-            }).then((res)=>res.json()).then((data)=> {
+            }).then((res) => res.json()).then((data) => {
 
             })
         };
     }
-    onDelete(index){
+
+    onDelete(index) {
         const dataSource = [...this.state.dataSource];
         dataSource.splice(index, 1);
-        this.setState({ dataSource });
+        this.setState({dataSource});
     }
-    handleAdd(){
-        const { count, dataSource } = this.state;
+
+    handleAdd() {
+        const {count, dataSource} = this.state;
         const newData = {
             key: count,
             name: '',
@@ -246,22 +239,25 @@ class EditableTable extends React.Component {
             count: count + 1,
         });
         fetch(`/admin/designer/add`, {
-            credentials:'same-origin',
-            method:'post',
+            credentials: 'same-origin',
+            method: 'post',
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then((res)=>res.json()).then((data)=>{
+        }).then((res) => res.json()).then((data) => {
+            location.href = '/admin/designer/list'
         })
 
     }
+
     render() {
-        const { dataSource } = this.state;
+        const {dataSource} = this.state;
         const columns = this.columns;
         return (
             <div>
                 <Button className="editable-add-btn" onClick={this.handleAdd}>添加</Button>
-                <Table bordered pagination={{pageSize:3,pageSizeOptions:['3'],defaultPageSize:3}} dataSource={this.state.dataSource} columns={columns} />
+                <Table bordered pagination={{pageSize: 3, pageSizeOptions: ['3'], defaultPageSize: 3}}
+                       dataSource={dataSource} columns={columns}/>
             </div>
         );
     }
@@ -270,5 +266,5 @@ class EditableTable extends React.Component {
 ReactDOM.render(
     <nav.AppNav>
         <EditableTable />
-</nav.AppNav>
-    ,document.querySelector('#page'));
+    </nav.AppNav>
+    , document.querySelector('#page'));

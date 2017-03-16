@@ -22,6 +22,19 @@ router.post('/txt',upload.single('wangEditorH5File'),(req,res)=>{
     });
     res.end('/admin/images/'+req.file.originalname);
 });
+router.post('/upload',upload.single('avatar'),(req,res)=>{
+    var o=fs.createWriteStream(path.resolve('public/admin/images/'+req.file.originalname));
+    fs.createReadStream(path.resolve(req.file.path)).pipe(o);
+    o.on('finish',function(){
+        fs.unlink(path.resolve(req.file.path))
+    });
+    res.end('/admin/images/'+req.file.originalname);
+});
+router.post('/update/img',(req,res)=>{
+    mysql.query('update designer set img=? where id=?',[req.body.url,req.body.id],(err,result)=>{
+        res.json('ok');
+    })
+});
 router.get('/products/list',(req,res)=>{
     res.sendFile(path.resolve('./views/admin/iron_pot.html'));
 });
@@ -123,7 +136,6 @@ router.get('/message/all', (req, res)=> {
 });
 // 留言删除
 router.get('/message/delete/:id', (req, res)=> {
-    console.log(req);
     mysql.query('delete from intention where id = ?',
         [req.params.id], function (err, data) {
             if (!err) {

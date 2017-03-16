@@ -60,13 +60,7 @@
 .avatar {
     width: 100px;
     height: 100px;
-    margin-left: 30px;
-}
-.avatar-uploader{
-    overflow: hidden;
-}
-.avatar{
-    margin-left: 0;
+    margin:0 auto;
 }
 .avatar-uploader {
     display: block;
