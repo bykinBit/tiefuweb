@@ -28,7 +28,7 @@ app.use('/admin',function(req,res,next){//中间件
     }
 });
 app.use('/admin',adminRouter);
-app.listen(3002,()=>{
+app.listen(8003,()=>{
     console.log('服务器已经启动');
 });
 process.on('uncaughtException',(ex)=>{
